@@ -1,9 +1,14 @@
 package com.example.consultorio;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Paciente {
 
 	private int edad;
 	private String nombre;
+	
+	//Metodos set y get
 	public int getEdad() {
 		return edad;
 	}
