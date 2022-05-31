@@ -16,7 +16,9 @@ public class ProyectoU1DtApplication implements CommandLineRunner {
 	@Autowired
 	private CitaMedica2 cita2;
 
-	
+	@Autowired
+	private Calendario calendario;
+
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoU1DtApplication.class, args);
 	}
@@ -29,12 +31,26 @@ public class ProyectoU1DtApplication implements CommandLineRunner {
 
 		// CitaMedica cita=new CitaMedica();
 
-		//System.out.println(this.cita.agendar(LocalDateTime.now(), "Dennis", "Tapia", 23, "Quito", "Javier", 0));
+		// System.out.println(this.cita.agendar(LocalDateTime.now(), "Dennis", "Tapia",
+		// 23, "Quito", "Javier", 0));
 
 		System.out.println(this.cita2.agendar(LocalDateTime.now(), "Dennis", "Tapia", 23, "Quito", "Javier", 0));
 
+		System.out.println("Primera: ");
+
+		System.out.println(
+				this.calendario.agendar(LocalDateTime.now(), "Denn", "Tapia", "Central", 26, "Ballenita", "A", 25));
 		
+		System.out.println("Segunda: ");
+
+		System.out.println(
+				this.calendario.agendar(LocalDateTime.now(), "Denn", "Tapia", "Central", 26, "Ballenita", "A", 25));
 		
+		System.out.println("Tercera: ");
+
+		System.out.println(
+				this.calendario.agendar(LocalDateTime.now(), "Denn", "Tapia", "Central", 26, "Ballenita", "A", 25));
+
 	}
 
 }
