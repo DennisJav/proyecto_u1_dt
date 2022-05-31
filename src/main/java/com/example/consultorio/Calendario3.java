@@ -15,10 +15,10 @@ public class Calendario3 {
 	
 	
 	
-	public Calendario3(Equipo equipo, Jugador jugador, LocalDateTime fechaPartido) {
+	public Calendario3(Equipo equipo, Jugador jugador) {
 		this.equipo = equipo;
 		this.jugador = jugador;
-		this.fechaPartido = fechaPartido;
+
 	}
 
 	public String agendar(LocalDateTime fecha, String nombre, String apellido, String posicion, int edad,

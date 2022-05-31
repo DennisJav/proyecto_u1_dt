@@ -18,6 +18,12 @@ public class ProyectoU1DtApplication implements CommandLineRunner {
 
 	@Autowired
 	private Calendario calendario;
+	
+	@Autowired
+	private Calendario2 calendario2;
+	
+	@Autowired
+	private Calendario3 calendario3;
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoU1DtApplication.class, args);
@@ -44,12 +50,12 @@ public class ProyectoU1DtApplication implements CommandLineRunner {
 		System.out.println("Segunda: ");
 
 		System.out.println(
-				this.calendario.agendar(LocalDateTime.now(), "Denn", "Tapia", "Central", 26, "Ballenita", "A", 25));
+				this.calendario2.agendar(LocalDateTime.now(), "Denn", "Tapia", "Central", 26, "Ballenita", "A", 25));
 		
 		System.out.println("Tercera: ");
 
 		System.out.println(
-				this.calendario.agendar(LocalDateTime.now(), "Denn", "Tapia", "Central", 26, "Ballenita", "A", 25));
+				this.calendario3.agendar(LocalDateTime.now(), "Denn", "Tapia", "Central", 26, "Ballenita", "A", 25));
 
 	}
 
