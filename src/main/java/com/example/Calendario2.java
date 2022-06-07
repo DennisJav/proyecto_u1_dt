@@ -1,4 +1,4 @@
-package com.example.consultorio;
+package com.example;
 
 import java.time.LocalDateTime;
 
