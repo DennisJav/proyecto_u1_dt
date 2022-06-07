@@ -1,18 +1,29 @@
-package com.example.consultorio;
+package com.example;
 
 import java.time.LocalDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CitaMedica2 {
+public class CitaMedica {
 
-	private Doctor doctor; //a su metodo set poner autowired
 
-	private Paciente paciente;  //a su metodo set poner autowired
+	//primera forma inyeccion por anotacion
+	@Autowired
+	private Doctor doctor;
+	@Autowired
+	private Paciente paciente;
 	
 	private LocalDateTime fechaCita;
+
+	
+	//segunda forma mediante constructor 
+//	public CitaMedica(Doctor doctor, Paciente paciente) {
+//		this.doctor = doctor;
+//		this.paciente = paciente;
+//	}
 
 
 
@@ -32,7 +43,7 @@ public class CitaMedica2 {
 		this.fechaCita = fechaCita;
 	
 		//se guarda la cita
-		return "cita agendada 2";
+		return "cita agendada";
 	}
 
 	
@@ -48,18 +59,15 @@ public class CitaMedica2 {
 	public Doctor getDoctor() {
 		return doctor;
 	}
-	
-	//tercera forma por metodo set
-	@Autowired
+
 	public void setDoctor(Doctor doctor) {
 		this.doctor = doctor;
 	}
 
-
 	public Paciente getPaciente() {
 		return paciente;
 	}
-	@Autowired
+
 	public void setPaciente(Paciente paciente) {
 		this.paciente = paciente;
 	}
