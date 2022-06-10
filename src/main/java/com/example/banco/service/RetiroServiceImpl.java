@@ -22,6 +22,8 @@ public class RetiroServiceImpl implements IRetiroService{
 	public void realizarRetiro(String numCuenta, BigDecimal monto, String titular) {
 		// TODO Auto-generated method stub
 		
+		System.out.println("-------------RETIRO------------");
+		
 		CuentaBancaria c=this.cuentaBancariaService.buscar(numCuenta);
 		System.out.println(c);
 		BigDecimal montoActual = c.getSaldo();
