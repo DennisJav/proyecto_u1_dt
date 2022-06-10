@@ -25,6 +25,18 @@ public class CuentaBancariaRepo implements ICuentaBancariaRepo{
 		return cuenta;
 	}
 
+	@Override
+	public void eliminar(String numero) {
+		// TODO Auto-generated method stub
+		System.out.println("Cuenta Eliminada: "+numero);
+	}
+
+	@Override
+	public void crear(CuentaBancaria c) {
+		// TODO Auto-generated method stub
+		System.out.println("Cuenta Creada");
+	}
+
 	
 	
 	

@@ -40,6 +40,27 @@ public class DepositoServiceImpl implements IDepositoService{
 		
 	}
 
+
+	@Override
+	public Deposito buscarDeposito(BigDecimal monto) {
+		// TODO Auto-generated method stub
+		return this.depositoRepo.buscarDeposito(monto);
+	}
+
+
+	@Override
+	public void eliminarDeposito(BigDecimal monto) {
+		// TODO Auto-generated method stub
+		this.depositoRepo.eliminarDeposito(monto);
+	}
+
+
+	@Override
+	public void actualizarDeposito(Deposito d) {
+		// TODO Auto-generated method stub
+		this.depositoRepo.actualizarDeposito(d);
+	}
+
 	
 	
 	

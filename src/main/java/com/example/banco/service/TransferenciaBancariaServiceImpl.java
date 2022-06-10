@@ -50,6 +50,27 @@ public class TransferenciaBancariaServiceImpl implements ITransferenciaService{
 		
 	}
 
+
+	@Override
+	public Transferencia buscarTransferencia(BigDecimal monto) {
+		// TODO Auto-generated method stub
+		return this.transferenciaRepo.buscarTransferencia(monto);
+	}
+
+
+	@Override
+	public void elimnarTransferencia(BigDecimal monto) {
+		// TODO Auto-generated method stub
+		this.transferenciaRepo.elimnarTransferencia(monto);
+	}
+
+
+	@Override
+	public void actualizarTransferencia(Transferencia t) {
+		// TODO Auto-generated method stub
+		this.transferenciaRepo.actualizarTransferencia(t);
+	}
+
 	
 	
 }
