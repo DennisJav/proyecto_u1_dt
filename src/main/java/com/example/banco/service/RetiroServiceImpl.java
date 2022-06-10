@@ -23,11 +23,13 @@ public class RetiroServiceImpl implements IRetiroService{
 		// TODO Auto-generated method stub
 		
 		CuentaBancaria c=this.cuentaBancariaService.buscar(numCuenta);
-		
+		System.out.println(c);
 		BigDecimal montoActual = c.getSaldo();
 		BigDecimal montoNuevo = montoActual.subtract(monto);
 		c.setSaldo(montoNuevo);
 		this.cuentaBancariaService.actualizar(c);
+		System.out.println(c);
+		
 		
 		Retiro r=new Retiro();
 		r.setFechaRetiro(LocalDateTime.now());
