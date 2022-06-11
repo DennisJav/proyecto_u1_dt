@@ -2,6 +2,8 @@ package com.example.banco.repository;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
@@ -40,6 +42,24 @@ public class TransferenciaBancaraRepo implements ITransferenciaRepo{
 	public void actualizarTransferencia(Transferencia t) {
 		// TODO Auto-generated method stub
 		System.out.println("Transferencia eliminada");
+	}
+
+	@Override
+	public List<Transferencia> consultarTransferencias(String cuenta, LocalDateTime fechaInicio,
+			LocalDateTime fechaFin) {
+		// TODO Auto-generated method stub
+		
+		List<Transferencia> listaConsultada = new ArrayList<>();
+		
+		Transferencia t=new Transferencia();
+		t.setFechaTransferencia(LocalDateTime.now());
+		t.setMontoTransferir(new BigDecimal(100));
+		t.setNumeroCuentaDestino("123");
+		t.setNumeroCuentaOrigen("323");
+		listaConsultada.add(t);
+		
+		
+		return listaConsultada;
 	}
 
 	
