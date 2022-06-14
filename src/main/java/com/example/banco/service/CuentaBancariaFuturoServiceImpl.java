@@ -10,9 +10,11 @@ import com.example.banco.modelo.CuentaBancaria;
 import com.example.banco.repository.ICuentaBancariaRepo;
 
 @Service
-@Qualifier("corriente")
-public class CuentaBancariaCorrienteServicenImpl implements ICuentaBancariaService{
+@Qualifier("futuro")
+public class CuentaBancariaFuturoServiceImpl implements ICuentaBancariaService{
 
+	@Autowired
+	private ICuentaBancariaRepo cuentaBancariaRepo;
 	
 	@Override
 	public void actualizar(CuentaBancaria c) {
@@ -39,16 +41,17 @@ public class CuentaBancariaCorrienteServicenImpl implements ICuentaBancariaServi
 	}
 
 	@Override
-	public BigDecimal calcularInteres(String numeroCuenta,BigDecimal saldo) {
+	public BigDecimal calcularInteres(String numeroCuenta, BigDecimal saldo) {
 		// TODO Auto-generated method stub
-		//dupliacdo solucion con fachada
-		//CuentaBancaria cuenta = this.cuentaBancariaRepo.buscar(numeroCuenta);
 		
-		//BigDecimal saldo = null;
-		BigDecimal interes=saldo.multiply(new BigDecimal(15)).divide(new BigDecimal(100));
-		
-		
+		BigDecimal interes = saldo.multiply(new BigDecimal(1.09)).add(new BigDecimal(0.10));
+		//		BigDecimal interes=saldo.multiply(new BigDecimal(15)).divide(new BigDecimal(100));
 		return interes;
 	}
 
+	
+	
+	
+	
+	
 }
