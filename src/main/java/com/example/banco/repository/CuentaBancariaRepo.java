@@ -21,6 +21,7 @@ public class CuentaBancariaRepo implements ICuentaBancariaRepo{
 		CuentaBancaria cuenta=new CuentaBancaria();
 		cuenta.setNumero(numero);
 		cuenta.setSaldo(new BigDecimal(100));
+		cuenta.setTipo("C");
 		System.out.println("Se busca cuenta bancaria: "+numero);
 		return cuenta;
 	}
