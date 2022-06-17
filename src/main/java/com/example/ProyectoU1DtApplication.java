@@ -18,6 +18,9 @@ import com.example.banco.service.IDepositoService;
 import com.example.banco.service.IFachadaCuentaBancaria;
 import com.example.banco.service.IRetiroService;
 import com.example.banco.service.ITransferenciaService;
+import com.example.hospital.modelo.DoctorEspecialidad;
+import com.example.hospital.modelo.DoctorGeneral;
+
 import com.example.mega.service.IGestorInventario;
 import com.example.modelo.Estudiante;
 import com.example.modelo.Materia;
@@ -31,18 +34,16 @@ import com.example.service.IMatriculaService;
 @SpringBootApplication
 public class ProyectoU1DtApplication implements CommandLineRunner {
 
-	@Autowired
-	private ProfesorGeneral profesorGeneral;
-	@Autowired
-	private ProfesorGeneral profesorGeneral1;
 
 	@Autowired
-	private ProfesorMateria materia;
+	private DoctorGeneral doctorGeneral;
 	@Autowired
-	private ProfesorMateria materia1;
+	private DoctorGeneral doctorGeneral2;
 	
 	@Autowired
-	private IMatriculaService matriculaService;
+	private DoctorEspecialidad doctorEspecialidad;
+	@Autowired
+	private DoctorEspecialidad doctorEspecialidad1;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoU1DtApplication.class, args);
@@ -51,30 +52,34 @@ public class ProyectoU1DtApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		// 1
-		System.out.println("SINGLETON");
-		this.profesorGeneral.setNombre("DEnnis");
-		this.profesorGeneral.setApellido("Tapia");
-		System.out.println(this.profesorGeneral);
-		//
-		this.profesorGeneral1.setNombre("JAVIER");
-		System.out.println(this.profesorGeneral);
-
-		System.out.println("PROTOTYPE");
-		this.materia.setNombre("Daniel");
-		this.materia.setApellido("Cano");
-		System.out.println(this.materia);
-		System.out.println("------------");
-		System.out.println(this.materia1);
-		this.materia1.setNombre("Albert");
-		System.out.println(this.materia1);
-//		
-		Matricula m=new Matricula();
-		m.setEstudiante(new Estudiante());
-		m.setMateria(new ArrayList<Materia>());
-		m.setNumero("12");
-		
-		this.matriculaService.insertarMatricula(m);
+	System.out.println("SINGLETON");
+	this.doctorGeneral.setNombre("DENNIS");
+	this.doctorGeneral.setApellido("TAPIA");
+	this.doctorGeneral.setConsultorioNumero("A1");
+	System.out.println(this.doctorGeneral);
+	System.out.println("SINGLETON 2");
+	System.out.println(this.doctorGeneral2);
+	
+	System.out.println("---------------------------------------------");
+	
+	System.out.println("PROTOTYPE 1");
+	this.doctorEspecialidad.setNombre("JAVIER");
+	this.doctorEspecialidad.setApellido("ORTIZ");
+	this.doctorEspecialidad.setEspecialidad("CARDIOLOGO");
+	this.doctorEspecialidad.setConsultorioNumero("A2");
+	System.out.println(this.doctorEspecialidad);
+	
+	System.out.println("PROTOTYPE 2");
+	System.out.println(this.doctorEspecialidad1);
+	System.out.println("PROTOTYPE 3");
+	this.doctorEspecialidad1.setNombre("LUIS");
+	this.doctorEspecialidad1.setApellido("JUAREZ");
+	this.doctorEspecialidad1.setEspecialidad("OFTAMOLOGIA");
+	this.doctorEspecialidad1.setConsultorioNumero("A3");
+	System.out.println(this.doctorEspecialidad);
+	
+//	
+	
 		
 	}
 
