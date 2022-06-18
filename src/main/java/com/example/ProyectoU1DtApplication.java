@@ -34,16 +34,18 @@ import com.example.service.IMatriculaService;
 @SpringBootApplication
 public class ProyectoU1DtApplication implements CommandLineRunner {
 
+	@Autowired
+	private ProfesorGeneral profesorGeneral;
+	@Autowired
+	private ProfesorGeneral profesorGeneral1;
 
 	@Autowired
-	private DoctorGeneral doctorGeneral;
+	private ProfesorMateria materia;
 	@Autowired
-	private DoctorGeneral doctorGeneral2;
-	
+	private ProfesorMateria materia1;
+
 	@Autowired
-	private DoctorEspecialidad doctorEspecialidad;
-	@Autowired
-	private DoctorEspecialidad doctorEspecialidad1;
+	private IMatriculaService matriculaService;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoU1DtApplication.class, args);
@@ -52,34 +54,34 @@ public class ProyectoU1DtApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-	System.out.println("SINGLETON");
-	this.doctorGeneral.setNombre("DENNIS");
-	this.doctorGeneral.setApellido("TAPIA");
-	this.doctorGeneral.setConsultorioNumero("A1");
-	System.out.println(this.doctorGeneral);
-	System.out.println("SINGLETON 2");
-	System.out.println(this.doctorGeneral2);
-	
-	System.out.println("---------------------------------------------");
-	
-	System.out.println("PROTOTYPE 1");
-	this.doctorEspecialidad.setNombre("JAVIER");
-	this.doctorEspecialidad.setApellido("ORTIZ");
-	this.doctorEspecialidad.setEspecialidad("CARDIOLOGO");
-	this.doctorEspecialidad.setConsultorioNumero("A2");
-	System.out.println(this.doctorEspecialidad);
-	
-	System.out.println("PROTOTYPE 2");
-	System.out.println(this.doctorEspecialidad1);
-	System.out.println("PROTOTYPE 3");
-	this.doctorEspecialidad1.setNombre("LUIS");
-	this.doctorEspecialidad1.setApellido("JUAREZ");
-	this.doctorEspecialidad1.setEspecialidad("OFTAMOLOGIA");
-	this.doctorEspecialidad1.setConsultorioNumero("A3");
-	System.out.println(this.doctorEspecialidad);
-	
-//	
-	
+
+		// 1
+		System.out.println("SINGLETON");
+		this.profesorGeneral.setNombre("DEnnis");
+		this.profesorGeneral.setApellido("Tapia");
+		System.out.println(this.profesorGeneral);
+		//
+		this.profesorGeneral1.setNombre("JAVIER");
+		System.out.println(this.profesorGeneral);
+
+		System.out.println("PROTOTYPE");
+		this.materia.setNombre("Daniel");
+		this.materia.setApellido("Cano");
+		System.out.println(this.materia);
+		System.out.println("------------");
+		System.out.println(this.materia1);
+		this.materia1.setNombre("Albert");
+		System.out.println(this.materia1);
+//		
+		Matricula m=new Matricula();
+		m.setEstudiante(new Estudiante());
+		m.setMateria(new ArrayList<Materia>());
+		m.setNumero("12");
+
+		
+		
+		
+		this.matriculaService.insertarMatricula(m);
 		
 	}
 
